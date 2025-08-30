@@ -1,7 +1,12 @@
 import axios from "axios";
 
+const baseURL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:8080"
+    : "https://rootx-task-backend.onrender.com";
+
 const api = axios.create({
-  baseURL: "http://localhost:8080/api/v1",
+  baseURL,
   withCredentials: true,
 });
 
